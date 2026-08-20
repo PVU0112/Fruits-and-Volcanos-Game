@@ -1,0 +1,351 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Fruits and Volcanos</title>
+    <style>
+        /* Engine-Specific */
+        * {
+            margin: 0;
+            overflow: hidden;
+        
+
+        }
+    
+        *{
+            background-color: rgb(136, 119, 119);
+        }
+
+
+    </style>
+</head>
+
+<body>
+    <canvas id="canv"></canvas>
+    <script src="./engine/Engine.js"></script>
+    <script src="./engine/Scene.js"></script>
+
+
+
+    <script src="./engine/GameObject.js"></script>
+    <script src="./engine/Component.js"></script>
+    <script src="./engine/Input.js"></script>
+    <script src="./engine/Vector2.js"></script>
+    <script src="./engine/Time.js"></script>
+    <script src="./engine/Collisions.js"></script>
+    <script src="./engine/BehaviorTree.js"></script>
+    
+
+
+    
+    <script src="./engine/components/Transform.js"></script>
+    <script src="./engine/components/TextLabel.js"></script>
+    <script src="./engine/components/Polygon.js"></script>
+    <script src="./engine/components/Collider.js"></script>
+    <script src="./engine/components/RigidBody.js"></script>
+    <script src="./engine/components/Camera.js"></script>
+    <script src="./engine/components/ParticleSystem.js"></script>
+    <script src="./engine/components/Mathf.js"></script>
+    
+    
+    <script src="./engine/SceneManager.js"></script>
+
+
+
+    
+
+    
+    
+    <script src="./game/Scene_Manager/Level_Manager/Level_1.js"></script>
+    <script src="./game/Scene_Manager/Level_Manager/Level_2.js"></script>
+     <script src="./game/Scene_Manager/Level_Manager/Level_3.js"></script>
+    <script src="./game/Scene_Manager/Level_Select_Scene.js"></script>
+    <script src="./game/Scene_Manager/Victory_Scene.js"></script>
+    <script src="./game/Scene_Manager/Start_Scene.js"></script>
+    <script src="./game/Scene_Manager/Guide_scene.js"></script>
+
+
+
+
+    <script src="./game/Scene_Manager/Dead_Scene.js"></script>
+
+    <script src="./game/Buttons/LoadOne_Button_GameObject.js"></script>
+    <script src="./game/Buttons/LoadOne_Button_Component.js"></script>
+
+    <script src="./game/Buttons/Level_Selector_Component.js"></script>
+    <script src="./game/Buttons/Level_Selector_GameObject.js"></script>
+
+    <script src="./game/Buttons/Level_Transition_Component.js"></script>
+    <script src="./game/Buttons/Level_Transition_GameObject.js"></script>
+
+    <script src="./game/Buttons/Guide_Component.js"></script>
+    <script src="./game/Buttons/Guide_GameObject.js"></script>\
+
+    <script src="./game/Buttons/Back_Button_Game_Object.js"></script>
+    <script src="./game/Buttons/Back_Button_Game_Component.js"></script>
+
+
+
+
+
+
+
+
+
+    <script src="./game/Globals.js"></script>
+    
+    
+    
+    
+    //
+    <script src="./game/Main_Character_Component.js"></script>
+    <script src="./game/Main_Character_GameObject.js"></script>
+    <script src="./game/PlatformGameObject.js"></script>
+    <script src="./game/PlatformGameComponent.js"></script>
+
+    <script src="./game/Farming_Hat_Component.js"></script>
+    <script src="./game/Farming_Hat_GameObject.js"></script>
+
+    <script src="./game/Mushroom_semi_Component.js"></script>
+    <script src="./game/Mushroom_semi_GameObject.js"></script>
+
+    <script src="./game/Wheels_Component.js"></script>
+    <script src="./game/Wheels_GameObject.js"></script>
+    
+
+    <script src="./game/Invincible_Camera_Component.js"></script>
+    <script src="./game/Invincible_Camera_GameObject.js"></script>
+    <script src="./game/VolcanoParticleSystemGameObject.js"></script>
+    <script src="./game/BlueParticleGameObject.js"></script>
+    
+
+
+
+
+    //
+   
+    // Falling_items
+    <script src="./game/Falling_items/Item_Spawn_Component.js"></script>
+    <script src="./game/Falling_items/Item_Spawn_GameObject.js"></script>
+    
+    <script src="./game/Falling_items/Norm_Bomb_Explosion_Component.js"></script>
+    <script src="./game/Falling_items/Norm_Bomb_Explosion_GameObject.js"></script>
+    <script src="./game/Falling_items/Super_Bomb_Explosion_Component.js"></script>
+    <script src="./game/Falling_items/Super_Bomb_Explosion_GameObject.js"></script>
+
+
+    <script src="./game/Falling_items/Item_pool/Fruit_Item_Component.js"></script>
+    <script src="./game/Falling_items/Item_pool/Fruit_Item_GameObject.js"></script>
+
+    <script src="./game/Falling_items/Item_pool/Bomb_Item_Component.js"></script>
+    <script src="./game/Falling_items/Item_pool/Bomb_Item_GameObject.js"></script>
+
+    <script src="./game/Falling_items/Item_pool/SuperBomb_Item_Component.js"></script>
+    <script src="./game/Falling_items/Item_pool/SuperBomb_Item_GameObject.js"></script>
+
+    <script src="./game/Falling_items/Item_pool/GoldenFruit_Item_Component.js"></script>
+    <script src="./game/Falling_items/Item_pool/GoldenFruit_Item_GameObject.js"></script>
+
+    <script src="./game/Falling_items/Item_pool/Mushroom_GameObject.js"></script>
+    <script src="./game/Falling_items/Item_pool/Mushroom_Component.js"></script>
+
+
+
+    //
+
+    //
+    <script src="./game/Hazards/Spikes_Component.js"></script>
+    <script src="./game/Hazards/Spikes_GameObject.js"></script>
+    <script src="./game/Hazards/All_Controllers_Hazards/Annoying_Farmer_Component.js"></script>
+    <script src="./game/Hazards/Annoying_Farmer_GameObject.js"></script>
+    <script src="./game/Hazards/Switch_Platform_Component.js"></script>
+    <script src="./game/Hazards/Switch_Platform_GameObject.js"></script>
+
+    <script src="./game/Hazards/All_Controllers_Hazards/Switch_Platform_Controller_Component.js"></script>
+    <script src="./game/Hazards/All_Controllers_Hazards/Switch_Platform_Controller_GameObject.js"></script>
+    <script src="./game/Hazards/All_Controllers_Hazards/Wall_Control_Component.js"></script>
+    <script src="./game/Hazards/All_Controllers_Hazards/Wall_Control_GameObject.js"></script>
+    <script src="./game/Hazards/All_Controllers_Hazards/Spike_Controller_GameObject.js"></script>
+    <script src="./game/Hazards/All_Controllers_Hazards/Spikes_Controller_Component.js"></script>
+    //
+
+
+
+    //
+
+    <script src="./game/UI_Text/Text/Count_Down_Component.js"></script>
+    <script src="./game/UI_Text/Text/Count_Down_GameObject.js"></script>
+    
+    <script src="./game/UI_Text/Text/PointsGameObject.js"></script>
+    <script src="./game/UI_Text/Text/PointsComponent.js"></script>
+    
+    <script src="./game/UI_Text/Text/Dash_Timer_Component.js"></script>
+    <script src="./game/UI_Text/Text/Dash_TImer_GameObject.js"></script>
+
+    <script src="./game/UI_Text/Text/Score_Component.js"></script>
+    <script src="./game/UI_Text/Text/Score_GameObject.js"></script>
+
+    <script src="./game/UI_Text/Text/Lost_Text_Component.js"></script>
+    <script src="./game/UI_Text/Text/Lost_Text_GameObject.js"></script>
+
+    <script src="./game/UI_Text/Text/Lives_Component.js"></script>
+    <script src="./game/UI_Text/Text/Lives_GameObject.js"></script>
+    
+    //
+
+   
+
+    //
+   
+    <script src="./game/Walls/Invis_Wall_L_Component.js"></script>
+    <script src="./game/Walls/Invis_Wall_L_GameObject.js"></script>
+    <script src="./game/Walls/Invis_Wall_R_Component.js"></script>
+    <script src="./game/Walls/Invis_Wall_R_GameObject.js"></script>
+  
+    //
+
+ 
+
+
+
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    <script>
+        // Engine-specific
+        
+        // Engine-specific
+   
+
+        //Game-specific
+        //Starting position of my character
+        let position = new Vector2()
+        let position2 = new Vector2()
+
+        function start() {
+            position.x = 0
+            position.y = 0
+
+            position2.x = 100
+            position2.y = 100
+
+            gameLoop()
+        }
+
+        //Engine-specific
+        function gameLoop() {
+            update()
+            draw()
+            requestAnimationFrame(gameLoop)
+        }
+
+        //Engine-specific
+        function update() {
+            //Game-specific
+            position.x++
+            position.y++
+
+            position2.x++
+            position2.y++
+        }
+
+        function draw() {
+
+            canvas.width = window.innerWidth
+            canvas.height = window.innerHeight
+
+
+
+            //Draw the first character
+            ctx.save()
+            ctx.translate(position.x, position.y)
+
+            ctx.beginPath()
+            ctx.moveTo(110, 90)
+            ctx.lineTo(145, 100)
+            ctx.lineTo(145, 90)
+            ctx.lineTo(155, 90)
+            ctx.lineTo(155, 100)
+            ctx.lineTo(190, 90)
+            ctx.lineTo(200, 140)
+            ctx.lineTo(175, 150)
+            ctx.lineTo(150, 140)
+            ctx.lineTo(125, 150)
+            ctx.lineTo(100, 140)
+            ctx.lineTo(110, 90)
+
+
+            ctx.lineWidth = 5
+            ctx.strokeStyle = "purple"
+            ctx.stroke()
+
+            ctx.fillStyle = "red"
+            ctx.fill()
+            ctx.restore()
+
+            //Draw the second character
+            ctx.save()
+            ctx.translate(position2.x, position2.y)
+
+            ctx.beginPath()
+            ctx.moveTo(110, 90)
+            ctx.lineTo(145, 100)
+            ctx.lineTo(145, 90)
+            ctx.lineTo(155, 90)
+            ctx.lineTo(155, 100)
+            ctx.lineTo(190, 90)
+            ctx.lineTo(200, 140)
+            ctx.lineTo(175, 150)
+            ctx.lineTo(150, 140)
+            ctx.lineTo(125, 150)
+            ctx.lineTo(100, 140)
+            ctx.lineTo(110, 90)
+
+
+            ctx.lineWidth = 5
+            ctx.strokeStyle = "teal"
+            ctx.stroke()
+
+            ctx.fillStyle = "orange"
+            ctx.fill()
+            ctx.restore()
+
+        }
+
+        // start()
+        SceneManager.currentScene = new Start_Scene()
+        Engine.start({
+            aspectRatio: 2,
+            layers: ["background", "foreground"],
+             collisionLayers: [
+            ["background", "foreground"],
+            ["foreground", "foreground"]  // ← add this
+    ]
+        })
+    </script>
+</body>
+
+</html>
